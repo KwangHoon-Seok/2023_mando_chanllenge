@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch"/>
+
+    <node pkg="dku_morai_driver" type="velocity_estimator.py" name="velocity_estimator" output="screen"/>
+    <node pkg="dku_morai_driver" type="yolo_detector.py" name="yolo_detector" output="screen"/>
+    <node pkg="dku_morai_driver" type="lidar_handler.py" name="lidar_handler" output="screen"/>
+    <node pkg="dku_morai_driver" type="lane_detector.py" name="lane_detector" output="screen"/>
+</launch>
